@@ -1,19 +1,19 @@
-const axios = require("axios");
+
 const server = require("./src/server");
-const router = require('./src/routes/index');
+const mainRouter = require('./src/routes/mainRouter');
 const { conn } = require('./src/db');
-const getCountriesData = require('./src/controllers/getApiControllers')
+const { getDataApi } = require('./src/handlers/countriesHandlers');
 
 
 const PORT = 3001;
 
-server.use('/countries', router);
+server.use(mainRouter);
 
 
 conn.sync({ force: true }).then(() => {
 server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
-  getCountriesData();
+  getDataApi();
 })
 }).catch(error => console.error(error))
 

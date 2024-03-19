@@ -1,27 +1,83 @@
-const { Country } = require('../db');
+const { Country, Activity } = require("../db");
+const axios = require('axios');
+const { Op } = require('sequelize');
 
-/*const countriesControllers = async () => {
-    try {
-      
-      const countriesData = await Country.findAll();
-  
-      return countriesData;
-    } catch (error) {
-     
-      console.error('Error al obtener los elementos:', error);
-      throw new Error('Error al obtener los elementos');
-    }
-  };*/
+const getCountriesDB = async () => {
+  try {
+    const infoApi = await axios.get('http://localhost:5000/countries');
+    const countriesApi = infoApi.data
 
-const countriesControllers = async (req, res) => {
+    for (const country of countriesApi) {
+
+      await Country.create({
+            id: country.cca3,
+            name: country.name.common,
+            image: country.flags.png,
+            continent: country.continents[0],
+            capital:  country.capital != null ? country.capital[0] : 'No se encontro dato',
+            subregion: country.subregion,
+            area: country.area,
+            population: country.population,
+         
+      });        
+    }console.log('Países guardados exitosamente en la base de datos.');
+
+  }catch (error) {
+    console.error('Error al guardar países:', error);
+  }
+};
+
+
+
+const getControllers = async () => {
   try {
     const countriesData = await Country.findAll();
-    res.status(200).json(countriesData)
-
-  } catch (error) {
+  }catch (error) {
     res.status(404).send(error.message)
-
   }
-}
+};
 
-module.exports = countriesControllers;
+
+
+const getIdCountry = async (id) => {
+  try {
+      const registro = await Country.findOne({
+         where: { id: id },
+         include: { model: Activity }
+      });
+  
+    if (registro) {
+        return registro.toJSON();
+    } else {
+        throw new Error('No se encontró ningún registro con ese ID.');
+      }
+  } catch (error) {
+      throw new Error('Error al buscar el registro.');
+  }
+};
+  
+  
+
+const getNameCountry = async (name) => {
+  try {
+      if (!name) {
+        return await Country.findAll();
+      } else {
+        return await Country.findAll({
+          where: {
+            name: { [Op.iLike]: `%${name}%` }
+        }
+        });
+      }
+  } catch (error) {
+      throw new Error('Error al obtener países por nombre.');
+    }
+  };
+  
+
+module.exports = { 
+  getCountriesDB,
+  getControllers,
+  getIdCountry,
+  getNameCountry,
+};
