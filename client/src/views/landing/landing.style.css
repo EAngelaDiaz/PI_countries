@@ -1,0 +1,28 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 250px;
+  border-radius: 15px;
+  background-color: #f3d593;
+    
+
+}
+
+.message {
+    font-size: xx-large;
+    color: black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.button {
+    width: 150px;
+    height: 75px;
+    border-radius: 10px;
+    border-color: black;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+
+
+}
