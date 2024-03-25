@@ -1,6 +1,5 @@
 const {
    getCountriesDB,
-   getControllers,
    getIdCountry,
    getNameCountry, 
 } = require('../controllers/countriesControllers');
@@ -16,17 +15,6 @@ const getDataApi = async (req, res) => {
 };
 
 
-
-const getCountries = async (req, res) => {
-  try {
-    const totalCountries = await getControllers();
-    res.status(200).json(totalCountries);
-  
-  } catch (error) {
-    res.status(404).send(error.message)
-  
-  }
-};
 
 
   
@@ -46,6 +34,7 @@ const getIdCountries = async (req, res) => {
 const getNameCountries = async (req, res) => {
   try {
     const { name } = req.query;
+    
     const countries = await getNameCountry(name);
     res.status(200).json(countries);
   } catch (error) {
@@ -57,7 +46,6 @@ const getNameCountries = async (req, res) => {
     
 module.exports = { 
   getDataApi,
-  getCountries,
   getIdCountries,
   getNameCountries,
 };

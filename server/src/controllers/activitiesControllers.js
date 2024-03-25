@@ -7,7 +7,7 @@ const createActivity = async (activityData) => {
      difficulty, 
      duration, 
      season, 
-     countries 
+     countries, 
   } = activityData;
   
   if (!name || !difficulty || !season) {
@@ -21,6 +21,7 @@ const createActivity = async (activityData) => {
         difficulty,
         duration,
         season,
+        countries,
       });
   
       const countriesData = await Country.findAll({

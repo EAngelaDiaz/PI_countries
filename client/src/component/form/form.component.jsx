@@ -1,6 +1,9 @@
-function Form () {
+import { Link } from "react-router-dom"
+
+export const orm = () => {
   return(
     <div>
+      <Link to= '/home'><button>Home</button></Link>
       <form onSubmit={''}>
           <div>
             <label>Nombre:</label>
@@ -29,3 +32,4 @@ function Form () {
     </div>
     )
 }
+

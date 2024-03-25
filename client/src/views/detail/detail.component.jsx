@@ -32,6 +32,18 @@ const Detail = () => {
          <p>{country?.subregion}</p>
          <p>{country?.area}</p>
          <p>{country?.population}</p>
+         <div>
+      <h2>Activities</h2>
+      {country?.Activities.map(activity => (
+        <div key={activity.id}>
+          <p>Name: {activity.name}</p>
+          <p>Difficulty: {activity.difficulty}</p>
+          <p>Duration: {activity.duration}</p>
+          <p>Season: {activity.season}</p>
+        </div>
+      ))}
+    </div>
+
          <img src={country?.image}/>
     </div>
   );

@@ -1,6 +1,8 @@
 const validation = (activityData) => {
     const errors = {};
-
+    if( !/^\d+$/.test(activityData.id)) {
+        errors.id = 'No es un valor valido'
+    }
     if(!/^[a-zA-Z]+$/.test(activityData.name)) {
         errors.name = 'No es un nombre válido'
     }

@@ -29,15 +29,6 @@ const getCountriesDB = async () => {
 
 
 
-const getControllers = async () => {
-  try {
-    const countriesData = await Country.findAll();
-  }catch (error) {
-    res.status(404).send(error.message)
-  }
-};
-
-
 
 const getIdCountry = async (id) => {
   try {
@@ -61,9 +52,12 @@ const getIdCountry = async (id) => {
 const getNameCountry = async (name) => {
   try {
       if (!name) {
-        return await Country.findAll();
+        return await Country.findAll({
+           include: { model: Activity}
+        });
       } else {
         return await Country.findAll({
+          include: { model: Activity},
           where: {
             name: { [Op.iLike]: `%${name}%` }
         }
@@ -77,7 +71,6 @@ const getNameCountry = async (name) => {
 
 module.exports = { 
   getCountriesDB,
-  getControllers,
   getIdCountry,
   getNameCountry,
 };

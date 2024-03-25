@@ -1,9 +1,18 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import validation from "../../validation/validation";
-import './form.style.css'
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { getCountries, postActivity } from '../../redux/actions/actions';
+
 
 const Form = () => {
+
+  const dispatch = useDispatch();
+  const countries = useSelector((state) => state.allCountries)
+
   const [activityData, setactivityData] = useState({
+    id:'',
     name:'',
     difficulty:'',
     duration:'',
@@ -12,6 +21,7 @@ const Form = () => {
   });
 
   const [errors, setErrors]= useState({
+    id:'',
     name:'',
     difficulty:'',
     duration:'',
@@ -20,6 +30,7 @@ const Form = () => {
   });
 
   const handleChange = (event) => {
+    event.preventDefault()
       setactivityData({
           ...activityData,
           [event.target.name]: event.target.value
@@ -27,51 +38,126 @@ const Form = () => {
       setErrors(validation(activityData))
   };
 
-  const onSubmit = (event) => {
+  const handleSelect = (event) => {
+    event.preventDefault()
+      setactivityData({
+        ...activityData,
+        countries:[...activityData.countries, event.target.value]
+      })
+      
+  }
+
+  const handleSubmit = (event) => {
    event.preventDefault();
+   console.log(activityData);
+   dispatch(postActivity(activityData))
+   alert("Actividad creada")
+   setactivityData({
+    id:'',
+    name:'',
+    difficulty:'',
+    duration:'',
+    season:'',
+    countries: [],
+   })
+
    
   }
 
-  useEffect(() => {
-      if(activityData.name !== '' || activityData.difficulty !== '' || activityData.duration !== '' || activityData.season !== '' || activityData.countries !== '' ) {
+useEffect(() =>{
+  dispatch(getCountries())
+},[])
+
+useEffect(() => {
+      if(activityData.id !== '' || activityData.name !== '' || activityData.difficulty !== '' || activityData.duration !== '' || activityData.season !== '' || activityData.countries !== '' ) {
           const activityValidated = validation(activityData);
           setErrors(activityValidated);
       }
    }, [activityData])
 
-  return(
-    
-    <form onSubmit={onSubmit}>
-        
-          <label>Nombre:</label>
-          <input name='name' value={activityData.value} onChange={handleChange}></input>
-          {errors.name && <p style={{ color: 'red'}}>{errors.name}</p>}
-          <hr/>
-          <label>Dificultad:</label>
-          <input name='difficulty' value={activityData.value} onChange={handleChange}></input>
-          {errors.difficulty && <p style={{ color: 'red'}}>{errors.difficulty}</p>}
-          <hr/>
-          <label>Duración:</label>
-          <input name='duration' value={activityData.value} onChange={handleChange}></input>
-          {errors.duration && <p style={{ color: 'red'}}>{errors.duration}</p>}
-          <hr/>
-          <label>Temporada:</label>
-          <input name='season' value={activityData.value} onChange={handleChange}></input>
-          {errors.season && <p style={{ color: 'red'}}>{errors.season}</p>}
-          <hr/>
-          <label>Paises:</label>
-          <input name='countries' value={activityData.value} onChange={handleChange}></input>
-          {errors.countries && <p style={{ color: 'red'}}>{errors.countries}</p>}
-          <hr/>
+return(
+  <div>
+    <Link to='/home'>
+        <button>Home</button>
+    </Link>
+    <form onSubmit={(e)=>handleSubmit(e)}>
+      <div>
+      <label>Numero:</label>
+      <input 
+        name='id' 
+        value={activityData.value} 
+        onChange={handleChange}>
+      </input>
+          {errors.id && 
+          <p style={{ color: 'red'}}>
+          {errors.id}
+          </p>}
+      </div>
+      <div>
+        <label>Nombre:</label>
+        <input 
+        name='name' 
+        value={activityData.value} 
+        onChange={handleChange}
+        ></input>
+          {errors.name && 
+          <p style={{ color: 'red'}}>
+          {errors.name}
+          </p>}
+      </div>
+      <div>
+        <label>Dificultad:</label>
+        <input 
+        name='difficulty' 
+        value={activityData.value} 
+        onChange={handleChange}>
+        </input>
+          {errors.difficulty && 
+          <p style={{ color: 'red'}}>
+            {errors.difficulty}
+          </p>}
+      </div>
+      <div>
+        <label>Duración:</label>
+        <input 
+        name='duration' 
+        value={activityData.value} 
+        onChange={handleChange}>
+        </input>
+          {errors.duration && 
+          <p style={{ color: 'red'}}>
+            {errors.duration}
+            </p>}
+      </div>
+      <div>
+        <label>Temporada:</label>
+        <input 
+        name='season' 
+        value={activityData.value} 
+        onChange={handleChange}>
+        </input>
+          {errors.season && 
+          <p style={{ color: 'red'}}>
+            {errors.season}
+          </p>}
+      </div>
+      <div>
+      <label>Paises:</label>
+        <select onChange={event => handleSelect(event)}>
+          {countries.map((country) =>(
+            <option value={country.name}>{country.name}</option>
+          ))}
+        </select>
+        <ul><li>{activityData.countries.map(e => e + " ,")}</li></ul>
+      </div>
           <button
            type='submit'
-           disabled={!activityData.name || !activityData.difficulty || !activityData.season || !activityData.countries || errors.name || errors.difficulty || errors.duration || errors.season || errors.countries}
+           disabled={!activityData.id || !activityData.name || !activityData.difficulty || !activityData.season || !activityData.countries || errors.name || errors.difficulty || errors.duration || errors.season}
           >CREAR</button>
-       
     </form>
-  
+  </div>
   )
-}
+};
 
 export default Form;
 

@@ -11,7 +11,7 @@ const SearchBar = ({ onSearch }) => {
 
    return (
       <div>
-          <input className={style.input} type='search' value={country} onChange={handleChange} />
+          <input className={style.input} type='text'placeholder="Buscar..." value={country} onChange={handleChange} />
          <button className={style.button}onClick={() => onSearch(character)}>Agregar</button> 
       </div>
    );
