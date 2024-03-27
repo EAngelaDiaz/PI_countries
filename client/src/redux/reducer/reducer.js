@@ -5,6 +5,7 @@ const initialState = {
     allCountries: [],
     countriesCopy: [],
     allActivities: [],
+    country:[]
    
 }
 

@@ -58,19 +58,3 @@ export default Home
 
 
 
-
- /*const [filtered, setFiltered] = useState(allCountries);
-  const [country, setCountry] = useState('');
-
-  function handleChange(event) {
-    event.preventDefault();
-    setCountry(event.target.value);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault()
-    const filtered = allCountries.filter((country) => 
-      country.name.includes(country)
-    );
-    setFiltered(filtered);
-  } */

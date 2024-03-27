@@ -1,4 +1,3 @@
-const { Activity, Country } = require("../db");
 const { createActivity, getAllActivities } =require("../controllers/activitiesControllers");
 
 

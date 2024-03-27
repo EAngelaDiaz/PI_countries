@@ -7,8 +7,6 @@ const  {
 
 
 countriesRouter.get("/", getNameCountries);
-
-
 countriesRouter.get("/:idPais", getIdCountries);
 
 

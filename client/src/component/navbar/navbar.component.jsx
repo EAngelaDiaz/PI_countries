@@ -17,8 +17,6 @@ function Navbar({handleChange, handleSubmit}) {
 }, [dispatch]);
 
 
-
-
   function handleFilterContinent(event) {
     dispatch(filterByContinent(event.target.value))
   };
@@ -75,8 +73,8 @@ function Navbar({handleChange, handleSubmit}) {
           <option value='Africa'>África</option>
           <option value='Oceania'>Oceanía</option>
           <option value='Asia'>Asia</option>
-          <option value='North America'>América del Norte</option>
-          <option value='South America'>América del Sur</option>
+          <option value='Americas'>América</option>
+          <option value='Antarctic'>Antártida</option>
         </select>
         <select onChange={event => handleFilterActivity(event)}>
         <option value=''>Filtrar por actividad:</option>

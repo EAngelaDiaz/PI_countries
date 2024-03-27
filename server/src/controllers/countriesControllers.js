@@ -13,7 +13,7 @@ const getCountriesDB = async () => {
             id: country.cca3,
             name: country.name.common,
             image: country.flags.png,
-            continent: country.continents[0],
+            continent: country.region,
             capital:  country.capital != null ? country.capital[0] : 'No se encontro dato',
             subregion: country.subregion,
             area: country.area,
