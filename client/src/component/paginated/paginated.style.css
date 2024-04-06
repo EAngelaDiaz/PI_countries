@@ -7,13 +7,13 @@
   }
   
   .pagination li {
-    margin: 0 5px;
+    margin: 0 1px;
   }
   
   .pagination li a {
     text-decoration: none;
-    color: #333;
-    padding: 8px 12px;
+    color: #9c9999;
+    padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }

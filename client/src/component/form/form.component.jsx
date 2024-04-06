@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import React from "react"
+import './form.style.css'
 
 
 export const Form = ({
@@ -11,10 +12,13 @@ export const Form = ({
   handleDelete,
   handleSubmit,}) => {
   return(
+    <div className="contenedor">
     <div>
     <Link to='/home'>
-        <button>Home</button>
+        <button className="boton">Home</button>
     </Link>
+    </div>
+    <div className="formulario">
     <form onSubmit={event=>handleSubmit(event)}>
       <div>
       <label>Numero:</label>
@@ -96,7 +100,7 @@ export const Form = ({
         <p>{e}</p>
         <button onClick={()=>handleDelete(e)}>x</button>
       </div>)}
-      <button
+      <button className="crear"
            type='submit'
            
            disabled={!activityData.id || !activityData.name || !activityData.difficulty || errors.name || errors.difficulty || errors.duration || activityData.season == '' || activityData.countries.length == 0}
@@ -104,5 +108,6 @@ export const Form = ({
     </form>
     
   </div>
+</div>
   )
   }

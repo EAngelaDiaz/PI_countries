@@ -1,0 +1,54 @@
+.boton {
+    margin: 25px 25px 25px 25px;
+    border-radius: 20%;
+    padding: 10px;
+    border-radius: 10px;
+    float:initial;
+    background-color: hsl(0, 0%, 100%);
+    border-style: solid;
+    border-color: #347abd;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    color:#081664;
+    cursor: pointer;
+}
+
+.formulario {
+    
+    background-color: #347abd;
+    width: 400px;
+    height: 500px;
+    float: inline-start;
+    margin-left: 29%;
+    padding: 25px 25px 25px 25px;
+    border-radius: 15px;
+    border-style: ridge;
+    
+}
+
+label {
+    margin: 10px 10px 10px 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+input {
+    margin: 10px 10px 10px 10px;
+
+}
+
+select {
+    margin: 10px 10px 10px 10px;
+}
+
+.crear {
+    border-radius: 20%;
+    padding: 10px;
+    border-radius: 10px;
+    float:initial;
+    background-color: hsl(0, 0%, 100%);
+    border-style: solid;
+    border-color: #347abd;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}

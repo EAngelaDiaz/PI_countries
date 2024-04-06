@@ -46,17 +46,17 @@ function Navbar({handleChange, handleSubmit}) {
 
   return (
       <div className='search-box'>
-       <form onChange={handleChange}>
-        <input placeholder='Busqueda'></input>
-        <button type='submit' onClick={handleSubmit}>Buscar</button>
+       <form className='barra_busqueda' onChange={handleChange}>
+        <input className='busqueda' placeholder='Busqueda'></input>
+        <button className='boton_busqueda' type='submit' onClick={handleSubmit}>Buscar</button>
        </form>
        <Link to='/form'>
-        <button>Crear actividad</button>
+        <button className='boton_crear' >Crear actividad</button>
        </Link>
        <Link to='/'>
-        <button>Salir</button>
+        <button className='boton_salir' >Salir</button>
        </Link>
-       <div>
+       <div className='filtros'>
         <select onChange={event => handleOrderAlphabet(event)}>
           <option value=''>Ordenar por:</option>
           <option value='ascendente'>Ascendente</option>

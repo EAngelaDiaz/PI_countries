@@ -1,17 +1,53 @@
 .card-container {
+    width: 180px;
+    height: 300px;
+    box-shadow: 0 10px 20px black;
+    justify-content: center;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
-    background-color: burlywood;
-    border: 1px solid rebeccapurple;
-    border-radius: 5px;
+    flex-direction:column;
+    background-color: #e9e5e5;
+    align-items: center;
+    border: 1px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
     padding: 25px;
     cursor: pointer;
     backface-visibility: hidden;
     transform: translateZ(0);
     transition: transform 0.25s ease-out;
+    
 
+}
+.enlace {
+    text-decoration: none;
 }
 
 .card-container:hover {
     transform: scale(1.05);
+}
+
+.nombre {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+    
+    
+
+}
+
+.imagen {
+    height: 80px;
+    width: 110;
+    border-radius: 50%;
+
+}
+
+.continente {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #080831;
+
 }

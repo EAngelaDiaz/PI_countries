@@ -27,25 +27,26 @@ const Detail = () => {
   return (
     <div>
      <div>
-      <button>
-      <Link to='/home'>Home</Link>
+      <button className="boton">
+      <Link className="enlace" to='/home'>Home</Link>
       </button>
     </div>
-    <div>
+  
+    <div className="principal">
         <h1>{country?.name}</h1>
          <img src={country?.image}/>
     </div>
-    <div>
-         <p>Capital: {country?.capital}</p>
-         <p>Continente: {country?.continent}</p>
-         <p>Subregion: {country?.subregion}</p>
-         <p>Área: {country?.area}</p>
-         <p>Población: {country?.population}</p>
+    <div className="detalle">
+         <h2>Capital: {country?.capital}</h2>
+         <h2>Continente: {country?.continent}</h2>
+         <h2>Subregion: {country?.subregion}</h2>
+         <h2>Área: {country?.area}</h2>
+         <h2>Población: {country?.population}</h2>
          </div>
-      <h2>Actividades:</h2>
+      <h2 className="titulo">Actividades:</h2>
       {country?.Activities?.length > 0 ? (
         country.Activities.map(activity => (
-        <div key={activity.id}>
+        <div className="actividades" key={activity.id}>
           <p>Nombre: {activity.name}</p>
           <p>Dificultad: {activity.difficulty}</p>
           <p>Duración: {activity.duration}</p>

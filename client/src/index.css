@@ -1,0 +1,10 @@
+body {
+  background: linear-gradient( #2449ee, black);
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  
+}

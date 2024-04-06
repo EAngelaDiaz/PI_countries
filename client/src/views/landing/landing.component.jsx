@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Landing() {
   return (
-    <div>
+    <div className='fondo'>
       <div className='container'>
         <p className='message'>Bienvenidos!!</p>
         <Link to={'/home'}>

@@ -42,7 +42,6 @@ function Home() {
 
   return (
       <div className='home-container'>
-       <h1 className='home-title'>Este es mi Home</h1>
        <Navbar handleChange={handleChange} handleSubmit={handleSubmit}/>
        <Cards currentCountries={currentCountries}/>
        <Paginated
