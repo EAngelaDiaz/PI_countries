@@ -1,5 +1,4 @@
 .pagination {
-    list-style-type: none;
     display: flex;
     justify-content: center;
     margin: 20px 0;
@@ -11,18 +10,18 @@
   }
   
   .pagination li a {
-    text-decoration: none;
-    color: #9c9999;
+    color: black;
     padding: 5px 10px;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(49, 48, 48);
     border-radius: 5px;
   }
   
   .pagination li a:hover {
     background-color: #f0f0f0;
+    cursor: pointer;
   }
   
-  .pagination .active a {
-    background-color: #007bff;
-    color: #fff;
+  .pagination li a:active {
+    background-color: white;
+    color: black;
   }

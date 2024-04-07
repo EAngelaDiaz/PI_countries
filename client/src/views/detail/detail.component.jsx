@@ -27,9 +27,9 @@ const Detail = () => {
   return (
     <div>
      <div>
-      <button className="boton">
-      <Link className="enlace" to='/home'>Home</Link>
-      </button>
+      <Link to={'/home'}>
+        <button className='boton'>Volver</button>
+      </Link>
     </div>
   
     <div className="principal">
@@ -53,7 +53,7 @@ const Detail = () => {
           <p>Temporada: {activity.season}</p>
         </div>
       ))
-    ) : <p>No hay actividades</p>
+    ) : <p className="mensaje">No hay actividades</p>
   }
     </div>
   )}

@@ -1,21 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .container {
   background-image: url('../../imagenes/planeta2.png');
+  background-position: 49% 21%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 550px;
-  height: 550px;
-  background-color: rgb(58, 70, 241);
+  width: 318px;
+  height: 318px;
+  border-radius: 50%;
   background-repeat: no-repeat;
+  font-size: 10px;
+
     
 
 }
 
 .message {
-  margin-top: 230px;
+    margin-top: 145px;
     float: start;
-    font-size: xx-large;
+    font-size: 4em ;
     color: black;
     font-weight: bold;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

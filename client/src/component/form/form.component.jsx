@@ -15,14 +15,14 @@ export const Form = ({
     <div className="contenedor">
     <div>
     <Link to='/home'>
-        <button className="boton">Home</button>
+        <button className="boton">Volver</button>
     </Link>
     </div>
     <div className="formulario">
     <form onSubmit={event=>handleSubmit(event)}>
       <div>
-      <label>Numero:</label>
-      <input 
+      <label className="nombres" >Numero:</label>
+      <input className="barra"
         name='id' 
         value={activityData.id} 
         >
@@ -33,8 +33,8 @@ export const Form = ({
           </p>}
       </div>
       <div>
-        <label>Nombre:</label>
-        <input 
+        <label className="nombres" >Nombre:</label>
+        <input className="barra"
         name='name' 
         value={activityData.name} 
         onChange={event=>handleChange(event)}
@@ -45,8 +45,8 @@ export const Form = ({
           </p>}
       </div>
       <div>
-        <label>Dificultad:</label>
-        <input 
+        <label className="nombres" >Dificultad:</label>
+        <input className="barra"
         name='difficulty' 
         value={activityData.difficulty} 
         onChange={event=>handleChange(event)}>
@@ -57,8 +57,8 @@ export const Form = ({
           </p>}
       </div>
       <div>
-        <label>Duración:</label>
-        <input 
+        <label className="nombres" >Duración:</label>
+        <input className="barra"
         name='duration' 
         value={activityData.duration} 
         onChange={event=>handleChange(event)}>
@@ -69,8 +69,8 @@ export const Form = ({
             </p>}
       </div>
       <div>
-        <label>Temporada:</label>
-        <select name='season' value={activityData.season} onChange={event =>handleChange(event)}>
+        <label className="nombres">Temporada:</label>
+        <select className='selector' name='season' value={activityData.season} onChange={event =>handleChange(event)}>
           <option value=''>Seleccionar...</option>
           <option value='Verano'>Verano</option>
           <option value='Otoño'>Otoño</option>
@@ -83,8 +83,8 @@ export const Form = ({
           </p>}
       </div>
       <div>
-      <label>Paises:</label>
-        <select name='countries' value={activityData.countries} onChange={event => handleSelect(event)}>
+      <label className="nombres">Paises:</label>
+        <select className='selector' name='countries' value={activityData.countries} onChange={event => handleSelect(event)}>
           <option value=''>Seleccionar...</option>
           {countries.map((country) =>(
             <option value={country.name}>{country.name}</option>
@@ -97,7 +97,7 @@ export const Form = ({
       </div>
       {activityData.countries.map(e =>
       <div>
-        <p>{e}</p>
+        <p className="pais">{e}</p>
         <button onClick={()=>handleDelete(e)}>x</button>
       </div>)}
       <button className="crear"

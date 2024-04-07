@@ -8,7 +8,7 @@ function Landing() {
       <div className='container'>
         <p className='message'>Bienvenidos!!</p>
         <Link to={'/home'}>
-        <button className='button'>Home</button>
+        <button className='button'>Ingresar</button>
         </Link>
       </div>
     </div>

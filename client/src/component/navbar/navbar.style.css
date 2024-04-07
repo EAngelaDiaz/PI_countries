@@ -14,12 +14,17 @@
     margin-top: 25px;
     float: inline-start;
     margin-left: 25%;
+    
 
 }
 
 .busqueda {
     margin: 15px 3px 25px 25px;
-    
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #347abd;
+    padding: 5px;
+    margin-top: 8px;
     
     
 
@@ -102,6 +107,6 @@ transition: transform 0.3s ease-out;
     float: inline-end;
     width: 100%;
     margin-top: 25px;
-    padding: 5px 10px;
-    margin-bottom: 25px;
+    padding: 10px 20px;
+    background-color: hsl(221, 61%, 19%);
 }

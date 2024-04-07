@@ -1,5 +1,6 @@
 body {
-  background: linear-gradient( #2449ee, black);
+  background: linear-gradient( #2449ee , black 70% );
+  background-image: url('./imagenes/depositphotos_34608059-stock-photo-flags-keyboard.png');
   background-position: center center;
   background-repeat: no-repeat;
   text-align: center;

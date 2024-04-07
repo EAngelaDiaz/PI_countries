@@ -1,12 +1,12 @@
 .card-container {
-    width: 180px;
-    height: 300px;
+    width: 100px;
+    height: 200px;
     box-shadow: 0 10px 20px black;
     justify-content: center;
     overflow: hidden;
     display: flex;
     flex-direction:column;
-    background-color: #e9e5e5;
+    background: whitesmoke;
     align-items: center;
     border: 1px;
     border-radius: 10px;
@@ -31,6 +31,8 @@
 .nombre {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: black;
+    font-size: 20px;
+    margin-bottom: 10px;
     
     
 
@@ -39,11 +41,13 @@
 .imagen {
     height: 80px;
     width: 110;
-    border-radius: 50%;
+    display: inline;;
 
 }
 
 .continente {
+    margin-top: 15px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
