@@ -4,7 +4,7 @@
 }
 
 .container {
-  background-image: url('../../imagenes/planeta2.png');
+  background-image: url('../../utils/imagenes/planeta2.png');
   background-position: 49% 21%;
   position: absolute;
   top: 50%;
@@ -15,8 +15,6 @@
   border-radius: 50%;
   background-repeat: no-repeat;
   font-size: 10px;
-
-    
 
 }
 
@@ -48,7 +46,7 @@
 
 }
 
-button:hover {
+.button:hover {
   color:black;
   background-color: blanchedalmond;
   transform: scale(1.05);

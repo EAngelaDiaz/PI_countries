@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCountries, getByName } from '../../redux/actions/actions';
+import { getCountries } from '../../redux/actions/actions';
 import './home.style.css';
 import Navbar from '../../component/navbar/navbar.component';
 import Cards from '../../component/cards/cards.component';
@@ -12,26 +12,15 @@ function Home() {
   const dispatch = useDispatch();
   const allCountries = useSelector((state) => state.allCountries);
 
-  const [country, setCountry] = useState('');
 
-  const [currentPage, setCurrenPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const [countriesPage, setCountriesPage] = useState(10)
   const indexOfLastCountry = currentPage * countriesPage;
   const indexOfFirstCountry = indexOfLastCountry - countriesPage;
   const currentCountries = allCountries.slice(indexOfFirstCountry, indexOfLastCountry);
 
   const paginado = (pageNumber) => {
-    setCurrenPage(pageNumber)
-  }
-
-  function handleChange(event) {
-    event.preventDefault();
-    setCountry(event.target.value);
-  }
-
-  function handleSubmit (event) {
-    event.preventDefault()
-    dispatch(getByName(country))
+    setCurrentPage(pageNumber)
   }
 
  
@@ -42,9 +31,11 @@ function Home() {
 
   return (
       <div className='home-container'>
-       <Navbar handleChange={handleChange} handleSubmit={handleSubmit}/>
+       <Navbar/>
        <Cards currentCountries={currentCountries}/>
        <Paginated
+       currentPage={currentPage}
+       setCurrentPage={setCurrentPage}
        countriesPage={countriesPage}
        allCountries={allCountries.length}
        paginado={paginado}
@@ -54,6 +45,5 @@ function Home() {
 }
 
 export default Home
-
 
 

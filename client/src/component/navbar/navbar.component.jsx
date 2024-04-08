@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import {getActivities, filterByContinent, filterByActivity, orderByAlphabet, orderByPopulation } from '../../redux/actions/actions'
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
+import SearchBar from '../searchBar/searchBar.component';
 
 function Navbar({handleChange, handleSubmit}) {
 
@@ -29,9 +30,6 @@ function Navbar({handleChange, handleSubmit}) {
   }
   
 
- 
-
-
   function handleOrderAlphabet(event) {
     event.preventDefault();
     dispatch(orderByAlphabet(event.target.value))
@@ -45,10 +43,9 @@ function Navbar({handleChange, handleSubmit}) {
   }
 
   return (
-      <div className='search-box'>
+    <div className='search-box'>
        <form className='barra_busqueda' onChange={handleChange}>
-        <input className='busqueda' placeholder='Busqueda'></input>
-        <button className='boton_busqueda' type='submit' onClick={handleSubmit}>Buscar</button>
+       <SearchBar onSearch={handleSubmit}/>
        </form>
        <Link to='/form'>
         <button className='boton_crear' >Crear actividad</button>
@@ -79,10 +76,10 @@ function Navbar({handleChange, handleSubmit}) {
         <select onChange={event => handleFilterActivity(event)}>
         <option value=''>Filtrar por actividad:</option>
         {activities.map((activity) =>(
-            <option key={activity.id} value={activity.name}>{activity.name}</option>))}
+          <option key={activity.id} value={activity.name}>{activity.name}</option>))}
         </select>
        </div>
-      </div>
+    </div>
   )
 }
 
