@@ -32,7 +32,7 @@ const Detail = () => {
       </Link>
     </div>
     <div className="principal">
-        <h1 className="nombre">{country?.name}</h1>
+        <h1 className="nombre_detalle">{country?.name}</h1>
          <img className="bandera" src={country?.image}/>
     
     <div className="detalle">

@@ -60,17 +60,17 @@ function Navbar({handleChange, handleSubmit}) {
         <button className='boton_salir' >Salir</button>
        </Link>
        <div className='filtros'>
-        <select onChange={event => handleOrderAlphabet(event)} value={order}>
+        <select className="selector_filtro" onChange={event => handleOrderAlphabet(event)} value={order}>
           <option value=''>Ordenar por:</option>
           <option value='ascendente'>Ascendente</option>
           <option value='descendente'>Descendente</option>
         </select>
-        <select onChange={event => handleOrderPopulation(event)} value={order}>
+        <select className="selector_filtro" onChange={event => handleOrderPopulation(event)} value={order}>
         <option value=''>Ordenar por:</option>
           <option value='menor'>Menor Población</option>
           <option value='mayor'>Mayor Población</option>
         </select>
-        <select onChange={event => handleFilterContinent(event)} value={selectedContinent}> 
+        <select className="selector_filtro" onChange={event => handleFilterContinent(event)} value={selectedContinent}> 
           <option value=''>Filtrar por continente:</option>
           <option value='Europe'>Europa</option>
           <option value='Africa'>África</option>
@@ -79,7 +79,7 @@ function Navbar({handleChange, handleSubmit}) {
           <option value='Americas'>América</option>
           <option value='Antarctic'>Antártida</option>
         </select>
-        <select onChange={event => handleFilterActivity(event)} value={selectedActivity}>
+        <select className="selector_filtro" onChange={event => handleFilterActivity(event)} value={selectedActivity}>
         <option value=''>Filtrar por actividad:</option>
         {activities.map((activity) =>(
           <option key={activity.id} value={activity.name}>{activity.name}</option>))}

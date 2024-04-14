@@ -67,3 +67,40 @@
     padding: 2rem 4rem;
     background-color: hsl(221, 61%, 19%);
 }
+
+
+@media only screen and (max-width:50rem) {
+    .search-box {
+        display: grid;
+        grid-template-columns: 1fr;
+        
+        
+    }
+
+    .boton_salir {
+        margin-right: 45%;
+    }
+
+    .boton_crear {
+        margin-left: 5%;
+    }
+    
+    
+    .filtros{
+        display: grid;
+        grid-template-columns: 1fr;
+       
+        
+        
+    } 
+
+    .selector_filtro {
+        width: 50rem;
+        margin-left: 40%;
+    }
+}
+
+
+
+
+

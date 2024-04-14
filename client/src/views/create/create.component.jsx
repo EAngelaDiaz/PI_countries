@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { getCountries, postActivity, getActivities } from '../../redux/actions/actions';
 import { Form } from '../../component/form/form.component';
-import './create.style.css'
 
 
 const Create = () => {

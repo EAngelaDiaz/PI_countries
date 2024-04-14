@@ -37,3 +37,9 @@
     background-color: #0b1730;
     transform: scale(1.05);
   }
+
+  @media only screen and (max-width:50rem) {
+    .barra_busqueda {
+        margin-right: 5%;
+    }
+}
