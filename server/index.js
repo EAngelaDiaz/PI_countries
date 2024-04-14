@@ -10,7 +10,7 @@ const PORT = 3001;
 server.use(mainRouter);
 
 
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: true  }).then(() => {
 server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
   getDataApi();

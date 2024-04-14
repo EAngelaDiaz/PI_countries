@@ -13,11 +13,18 @@ export const Form = ({
   handleSubmit,}) => {
   
 return(
-  <div className="contenedor">
+  <div >
+    <div className="contenedor_form">
       <div>
         <Link to='/home'>
          <button className="boton">Volver</button>
         </Link>
+      </div>
+      <div>
+        <Link to='/activities'>
+         <button className="boton">Actividades</button>
+        </Link>
+      </div>
       </div>
     <div className="formulario">
       <form onSubmit={event=>handleSubmit(event)}>
@@ -26,6 +33,7 @@ return(
         <input className="barra"
                name='id' 
                value={activityData.id}
+               onChange={event=>handleChange(event)}
         >
         </input>
           {errors.id && 
@@ -81,10 +89,6 @@ return(
            <option value='Primavera'>Primavera</option>
            <option value='Invierno'>Invierno</option>
          </select>
-          {errors.season && 
-           <p style={{ color: 'red'}}>
-            {errors.season}
-           </p>}
        </div>
        <div>
          <label className="nombres">Paises:</label>
@@ -94,10 +98,6 @@ return(
            <option value={country.name}>{country.name}</option>
             ))}
          </select>
-           {errors.countries && 
-            <p style={{ color: 'red'}}>
-            {errors.countries}
-            </p>}
        </div>
          {activityData.countries.map(e =>
          <div>
@@ -106,7 +106,7 @@ return(
          </div>)}
          <button className="crear"
            type='submit'
-           disabled={!activityData.id || !activityData.name || !activityData.difficulty || errors.name || errors.difficulty || errors.duration || activityData.season == '' || activityData.countries.length == 0}
+           disabled={!activityData.id || !activityData.name || !activityData.difficulty || errors.id || errors.name || errors.difficulty || errors.duration || activityData.season == '' || activityData.countries.length == 0}
          >CREAR</button>
       </form> 
     </div>

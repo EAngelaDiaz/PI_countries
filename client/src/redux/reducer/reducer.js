@@ -1,11 +1,24 @@
-import { GET_COUNTRIES, GET_ACTIVITIES, GET_BY_NAME, GET_BY_ID, FILTER_BY_CONTINENT, FILTER_BY_ACTIVITY, ORDER_BY_ALPHABET, ORDER_BY_POPULATION, POST_ACTIVITY } from "../action-types/action-types";
+import { GET_COUNTRIES, 
+         GET_ACTIVITIES,
+         GET_BY_ID_ACTIVITY, 
+         GET_BY_NAME, 
+         GET_BY_ID, 
+         FILTER_BY_CONTINENT, 
+         FILTER_BY_ACTIVITY, 
+         ORDER_BY_ALPHABET, 
+         ORDER_BY_POPULATION, 
+         POST_ACTIVITY, 
+         DELETE_ACTIVITY,
+         PUT_ACTIVITY
+         } from "../action-types/action-types";
 
 
 const initialState = {
     allCountries: [],
     countriesCopy: [],
     allActivities: [],
-    country:[]
+    country:[],
+    activity:[],
    
 }
 
@@ -23,6 +36,12 @@ const reducer = (state = initialState, { type, payload}) => {
                 ...state,
                 allActivities:payload,
             }
+
+        case GET_BY_ID_ACTIVITY:
+            return{
+                ...state,
+                activity:payload
+            }    
             
         case GET_BY_NAME:
             return{
@@ -88,8 +107,21 @@ const reducer = (state = initialState, { type, payload}) => {
                 };
             case  POST_ACTIVITY:
                 return {
-                    ...state,
-                }   
+                        ...state,
+                 }  
+                
+            case DELETE_ACTIVITY:
+                return {
+                        ...state,
+                        allActivities:payload,
+                    
+                }
+
+            case PUT_ACTIVITY:    
+                return {
+                          ...state,
+                        allActivities:payload,
+                }
                  
        default:
         return {...state}

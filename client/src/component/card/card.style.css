@@ -1,7 +1,7 @@
 .card-container {
-    width: 100px;
-    height: 200px;
-    box-shadow: 0 10px 20px black;
+    width: 24rem;
+    height: 48rem;
+    box-shadow: 0 2rem 4rem black;
     justify-content: center;
     overflow: hidden;
     display: flex;
@@ -9,10 +9,10 @@
     background: whitesmoke;
     align-items: center;
     border: 1px;
-    border-radius: 10px;
+    border-radius: 2rem;
     border-style: solid;
     border-color: black;
-    padding: 25px;
+    padding: 5rem;
     cursor: pointer;
     backface-visibility: hidden;
     transform: translateZ(0);
@@ -28,26 +28,26 @@
     transform: scale(1.05);
 }
 
-.nombre {
+.nombre_cards {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: black;
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 4rem;
+    margin-bottom: 2rem;
     
     
 
 }
 
-.imagen {
-    height: 80px;
-    width: 110;
+.imagen_cards {
+    height: 16rem;
+    width: 30rem;
     display: inline;;
 
 }
 
 .continente {
-    margin-top: 15px;
-    font-size: 15px;
+    margin-top: 3rem;
+    font-size: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,3 +55,4 @@
     color: #080831;
 
 }
+

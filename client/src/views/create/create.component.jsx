@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { getCountries, postActivity, getActivities } from '../../redux/actions/actions';
 import { Form } from '../../component/form/form.component';
+import './create.style.css'
 
 
 const Create = () => {
@@ -11,14 +12,14 @@ const Create = () => {
   const dispatch = useDispatch();
   const countries = useSelector((state) => state.allCountries)
   const activities = useSelector((state) => state.allActivities)
-  console.log(activities)
+  
 
   const [errors, setErrors]= useState({});
 
   
 
   const [activityData, setActivityData] = useState({
-    id: activities.length + 1,
+    id: '',
     name:'',
     difficulty:'',
     duration:'',
@@ -71,15 +72,21 @@ const handleSubmit = (event) => {
   event.preventDefault();
   console.log(activityData);
 
+  const idExist = activityData.id &&
+  activities.some(element => element.id == activityData.id);
+  if (idExist) {
+    alert("El numero ya existe. Por favor elige otro")
+    return;
+  }
+
+
   const nameExists = activityData.name && 
   activities.some(element =>element.name === activityData.name);
-  console.log(typeof(activityData.name))
   if (nameExists) {
-    alert("El nombre ya existe. Por favor, elige otro.");
+    alert("El nombre ya existe. Por favor elige otro.");
     return;
   }
   
-  console.log(nameExists)
   const actionResult = dispatch(postActivity(activityData));
   
   
@@ -93,7 +100,7 @@ const handleSubmit = (event) => {
     dispatch(getActivities());
 
     setActivityData({
-      id: activities.length + 2,
+      id: '',
       name:'',
       difficulty:'',
       duration:'',

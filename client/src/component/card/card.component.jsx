@@ -7,8 +7,8 @@ function Card({country}) {
   return (
     <Link className='enlace' to={`/detail/${id}`}>
       <div className='card-container'>
-       <h1 className='nombre'>{name}</h1>
-       <img className='imagen' src={image} alt={name} />
+       <h1 className='nombre_cards'>{name}</h1>
+       <img className='imagen_cards' src={image} alt={name} />
        <h3 className='continente'>{continent}</h3>
       </div>
     </Link>

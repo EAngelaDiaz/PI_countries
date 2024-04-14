@@ -1,11 +1,29 @@
 .cards-container {
     padding-top: 5%;
-    width: 85vw;
-    margin: 0 auto;
+    margin: 3rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
-    align-items: center;
+    grid-gap: 4rem;
+    
     
 
 }
+@media only screen and (max-width:60rem) {
+    .cards-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+@media only screen and (max-width:55rem) {
+    .cards-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width:50rem) {
+    .cards-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+

@@ -1,7 +1,7 @@
 .boton {
     border-radius: 20%;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 2rem;
+    border-radius: 2rem;
     float:initial;
     background-color: hsl(0, 0%, 100%);
     border-style: solid;
@@ -12,70 +12,85 @@
     cursor: pointer;
 }
 
-
-
-
-
 .boton:hover {
     background-color:#0b1730;
     transform: scale(1.05);
     color:white;
   }
 
-  .enlace {
+.enlace {
     text-decoration: none;
    
 }
 
 .principal {
-    border-radius: 10PX;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2rem;
+    border-style: solid;
     background-color: aliceblue;
-    margin: 25px 25px 25px 250px;
-    padding: 45px 20px 20px 20px;
-    width: 500px;
-    height: 350px;
+    margin-bottom: 10rem;
+    padding: 9rem 4rem 4rem 4rem;
+    width: 100rem;
+    
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.detalle {
-    border-radius: 10px;
-    background-color: aliceblue;
-    margin: 25px 25px 25px 250px;
-    padding: 15px;
-    width: 500px;
-    height: 200px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
+.nombre {
+    margin-left: 28rem;
+    font-size: 8rem;
+    text-align: center;
 }
 
-.titulo {
-    border-radius: 10px;
-    background-color: aliceblue;
-    margin: 25px 25px 25px 250px;
-    padding: 15px;
-    width: 500px;
-    height: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.actividades {
-    border-radius: 10px;
-    background-color: aliceblue;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
-    margin: 25px 25px 25px 350px;
-    padding: 15px;
-    width: 300px;
-    height: 100px;
+.bandera {
+    width: 70rem ;
+    margin-top: 5rem;
+    margin-bottom: 6rem;
     
 }
 
-.mensaje {
-    border-radius: 10px;
+.detalle {
+    font-size: 3rem;
+    margin-top: 2rem;
+    border-style:double;
+    border-color: #0b1730;
+    margin-bottom: 4rem;
+    padding: 4rem;
+}
+
+.subtitulo {
+    margin-bottom: 2rem;
+}
+
+
+.titulo {
+    text-align: center;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100rem;
+    border-radius: 2rem;
+    border-style: solid;
     background-color: aliceblue;
-    margin: 25px 25px 25px 250px;
-    padding: 15px;
-    width: 500px;
-    height: 20px;
+    padding: 3rem;
+    font-size: 3rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.detalle_actividad {
+    margin-top: 1rem;
+    font-size: 4rem;
+    border-style:double;
+    border-color: #0b1730;
+    padding: 5rem;
+}
+
+.mensaje {
+    margin-top: 5rem;
+    font-size: 4rem;
+    border-style:double;
+    border-color: #0b1730;
+    padding: 5rem;
+}
+

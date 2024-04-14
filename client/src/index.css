@@ -1,4 +1,13 @@
+html {
+  font-size: 5px;
+}
+
+head {
+  padding: 8rem;
+}
+
 body {
+  
   background: linear-gradient( #2449ee , black 70% );
   background-image: url('./utils/imagenes/depositphotos_34608059-stock-photo-flags-keyboard.png');
   background-position: center center;

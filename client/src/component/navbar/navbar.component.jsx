@@ -10,7 +10,10 @@ function Navbar({handleChange, handleSubmit}) {
 
   const dispatch = useDispatch();
   const activities = useSelector((state) => state.allActivities)
-  const [order, setOrder] = useState('')
+  const [order, setOrder] = useState('');
+  const [selectedContinent, setSelectedContinent] = useState('');
+  const [selectedActivity, setSelectedActivity] = useState('');
+  
   
 
   useEffect(() => {
@@ -20,13 +23,16 @@ function Navbar({handleChange, handleSubmit}) {
 
   function handleFilterContinent(event) {
     dispatch(filterByContinent(event.target.value))
+    setSelectedContinent(event.target.value);
+    setSelectedActivity('');
+
   };
 
   function handleFilterActivity(event) {
-    console.log(event)
     event.preventDefault()
     dispatch(filterByActivity(event.target.value))
-    console.log(dispatch)
+    setSelectedActivity(event.target.value);
+    setSelectedContinent('');
   }
   
 
@@ -54,17 +60,17 @@ function Navbar({handleChange, handleSubmit}) {
         <button className='boton_salir' >Salir</button>
        </Link>
        <div className='filtros'>
-        <select onChange={event => handleOrderAlphabet(event)}>
+        <select onChange={event => handleOrderAlphabet(event)} value={order}>
           <option value=''>Ordenar por:</option>
           <option value='ascendente'>Ascendente</option>
           <option value='descendente'>Descendente</option>
         </select>
-        <select onChange={event => handleOrderPopulation(event)}>
+        <select onChange={event => handleOrderPopulation(event)} value={order}>
         <option value=''>Ordenar por:</option>
           <option value='menor'>Menor Población</option>
           <option value='mayor'>Mayor Población</option>
         </select>
-        <select onChange={event => handleFilterContinent(event)}> 
+        <select onChange={event => handleFilterContinent(event)} value={selectedContinent}> 
           <option value=''>Filtrar por continente:</option>
           <option value='Europe'>Europa</option>
           <option value='Africa'>África</option>
@@ -73,7 +79,7 @@ function Navbar({handleChange, handleSubmit}) {
           <option value='Americas'>América</option>
           <option value='Antarctic'>Antártida</option>
         </select>
-        <select onChange={event => handleFilterActivity(event)}>
+        <select onChange={event => handleFilterActivity(event)} value={selectedActivity}>
         <option value=''>Filtrar por actividad:</option>
         {activities.map((activity) =>(
           <option key={activity.id} value={activity.name}>{activity.name}</option>))}

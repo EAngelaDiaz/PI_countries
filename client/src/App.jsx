@@ -3,7 +3,8 @@ import Landing from './views/landing/landing.component';
 import Home from './views/home/home.component';
 import Detail from './views/detail/detail.component';
 import Create from './views/create/create.component'
-
+import Activities from './views/activities/activities.component';
+import Edit from './views/edit/edit.component';
 import './views/home/home.style.css';
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
         <Route path='/detail/:id' element={<Detail/>}/>
         <Route path='/detail/?name' element={<Detail/>}/>
         <Route path='/form' element={<Create/>}/>
+        <Route path='/activities' element={<Activities/>}/>
+        <Route path='/activities/:id' element={<Edit/>}/>
       </Routes>
       </div>
   )

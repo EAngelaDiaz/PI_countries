@@ -1,17 +1,17 @@
 .barra_busqueda {
-    margin-top: 25px;
+    margin-top: 5rem;
     display:inline;
     margin-left: 10%;
 
 }
 
 .busqueda {
-    margin: 15px 3px 25px 25px;
+    margin: 3rem 1rem 5rem 5rem;
     border-style: solid;
     border-radius: 5px;
     border-color: #347abd;
-    padding: 5px;
-    margin-top: 8px;
+    padding: 1rem;
+    margin-top: 2rem;
     
     
 
@@ -19,8 +19,8 @@
 
 .boton_busqueda {
     border-radius: 20%;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 2rem;
+    border-radius: 2rem;
     background-color: hsl(0, 0%, 100%);
     border-style: solid;
     border-color: #347abd;
