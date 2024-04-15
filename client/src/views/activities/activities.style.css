@@ -138,4 +138,11 @@
     }
 }
 
+@media only screen and (max-width:60rem) {
+    .mensaje_actividades {
+    margin-left: auto;
+    width: 60rem;
+    }
+}
+
 

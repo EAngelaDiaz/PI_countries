@@ -94,3 +94,24 @@
     padding: 5rem;
 }
 
+@media only screen and (max-width:60rem) {
+    .principal{
+        width: 70rem;
+        display: grid;
+        grid-template-columns: 1fr;
+
+    }
+
+    .detalle_actividad {
+        width: 70rem;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .titulo{
+        width: 70rem;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+

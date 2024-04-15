@@ -1,11 +1,11 @@
-
+require("dotenv").config();
 const server = require("./src/server");
 const mainRouter = require('./src/routes/mainRouter');
 const { conn } = require('./src/db');
 const { getDataApi } = require('./src/handlers/countriesHandlers');
 
 
-const PORT = 3001;
+const PORT = process.env.PORT
 
 server.use(mainRouter);
 
