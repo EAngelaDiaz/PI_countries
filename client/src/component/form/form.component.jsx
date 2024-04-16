@@ -76,7 +76,7 @@ return(
          >
          </input>
           {errors.duration && 
-            <p style={{ color: 'red'}}>
+            <p style={{ color: 'red', fontSize: '30px'}}>
             {errors.duration}
             </p>}
        </div>

@@ -10,20 +10,20 @@ const SearchBar = (event) => {
 
    const handleChange = (event) => {
       event.preventDefault()
+      dispatch(getByName(event.target.value));
       setCountry(event.target.value)
    }
 
    function handleSubmit (event) {
-      event.preventDefault()
-      dispatch(getByName(country));
+      event.preventDefault();
       setCountry('');
-      
+      dispatch(getByName(''));
    }
 
    return (
       <div className="barra_busqueda">
         <input  className='busqueda' placeholder="Busqueda..." type="text" onChange={handleChange} value={country} />
-         <button className="boton_busqueda" onClick={handleSubmit}>Buscar</button>
+         <button className="boton_busqueda" onClick={handleSubmit}>Limpiar</button>
       </div>
    );
 }

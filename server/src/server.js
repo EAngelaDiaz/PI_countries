@@ -2,10 +2,10 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const mainRouter = require("./routes/mainRouter");
-require("dotenv").config();
+
 
 const server = express();
-const { FRONTEND_URL } = process.env;
+
 
 server.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -23,11 +23,7 @@ server.use((req, res, next) => {
 
 server.use(morgan("dev"));
 server.use(express.json());
-server.use(cors(
-   {
-      origin: FRONTEND_URL
-   }
-));
+server.use(cors());
 
 server.use(mainRouter);
 

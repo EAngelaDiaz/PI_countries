@@ -5,7 +5,7 @@ const { conn } = require('./src/db');
 const { getDataApi } = require('./src/handlers/countriesHandlers');
 
 
-const PORT = process.env.PORT || PORT
+const PORT = 3001
 
 server.use(mainRouter);
 

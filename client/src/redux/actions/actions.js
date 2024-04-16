@@ -18,7 +18,7 @@ import {
 } from '../action-types/action-types';
 
 export const getCountries = () => {
-    const endpoint = `${import.meta.env.VITE_BACKEND_URL}/countries`;
+    const endpoint = `http://localhost:3001/countries`;
     return async (dispatch) => {
        const {data} = await axios.get(endpoint);
           return dispatch({
@@ -29,7 +29,7 @@ export const getCountries = () => {
     };
 
 export const getActivities = () => {
-    const endpoint = `${import.meta.env.VITE_BACKEND_URL}/activities`;
+    const endpoint = `http://localhost:3001/activities`;
     return async (dispatch) => {
         const {data} = await axios.get(endpoint);
             return dispatch({
@@ -41,7 +41,7 @@ export const getActivities = () => {
         
         
 export const getByIdActivity = (id) => {
-    const endpoint = `${import.meta.env.VITE_BACKEND_URL}/activities/${id}`;
+    const endpoint = `http://localhost:3001/activities/${id}`;
     return async (dispatch) => {
         try{ 
             const {data} = await axios.get(endpoint);
@@ -57,7 +57,7 @@ export const getByIdActivity = (id) => {
 };         
 
 export const getByName = (name) => {
-    const endpoint = `${import.meta.env.VITE_BACKEND_URL}/countries/?name=${name}`;
+    const endpoint = `http://localhost:3001/countries/?name=${name}`;
     return async (dispatch) => {
         try {
         const {data} = await axios.get(endpoint);
@@ -72,7 +72,7 @@ export const getByName = (name) => {
     };
 
 export const getById = (id) => {
-    const endpoint = `${import.meta.env.VITE_BACKEND_URL}/countries/${id}`;
+    const endpoint = `http://localhost:3001/countries/${id}`;
     return async (dispatch) => {
         try{ 
         const {data} = await axios.get(endpoint);
@@ -123,7 +123,7 @@ export const orderByPopulation = (payload) => {
 export const postActivity = (payload) => {
     return async function (dispatch){
         try{
-        const data = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/activities`,payload);
+        const data = await axios.post(`http://localhost:3001/activities`,payload);
         return data
 
         } catch (error) {
@@ -134,7 +134,7 @@ export const postActivity = (payload) => {
 
  export const deleteActivity = (id) => {
     console.log(id)
-    const endpoint = `${import.meta.env.VITE_BACKEND_URL}/activities/${id}`;
+    const endpoint = `http://localhost:3001/activities/${id}`;
     return async (dispatch) => {
         try {
         const {data} = await axios.delete(endpoint);
