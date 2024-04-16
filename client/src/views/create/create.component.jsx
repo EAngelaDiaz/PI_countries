@@ -18,7 +18,7 @@ const Create = () => {
   
 
   const [activityData, setActivityData] = useState({
-    id: '',
+    id: activities?.length == 0 ? 1 : activities[activities.length - 1].id + 1,
     name: '',
     difficulty:'',
     duration:'',
@@ -71,14 +71,6 @@ const handleSubmit = (event) => {
   event.preventDefault();
   console.log(activityData);
 
-  const idExist = activityData.id &&
-  activities.some(element => element.id == activityData.id);
-  if (idExist) {
-    alert("El numero ya existe. Por favor elige otro")
-    return;
-  }
-
-
   const nameExists = activityData.name && 
   activities.some(element =>element.name.toUpperCase() === activityData.name.toUpperCase());
   if (nameExists) {
@@ -97,9 +89,8 @@ const handleSubmit = (event) => {
     alert("Actividad creada exitosamente");
 
     dispatch(getActivities());
-
     setActivityData({
-      id: '',
+      id: activities?.length == 0 ? 1 : activities[activities.length - 1].id + 2,
       name:'',
       difficulty:'',
       duration:'',
@@ -110,7 +101,7 @@ const handleSubmit = (event) => {
   }
 
 useEffect(() => {
-      if(activityData.id !== '' || activityData.name !== '' || activityData.difficulty !== '' || activityData.duration !== '' || activityData.season !== '' || activityData.countries !== '' ) {
+      if( activityData.name !== '' || activityData.difficulty !== '' || activityData.duration !== '' || activityData.season !== '' || activityData.countries !== '' ) {
           const activityValidated = validation(activityData);
           setErrors(activityValidated);
       }

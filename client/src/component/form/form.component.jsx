@@ -33,21 +33,15 @@ return(
         <input className="barra"
                name='id' 
                value={activityData.id}
-               onChange={event=>handleChange(event)}
-        >
+               onChange={event=>handleChange(event)}>
         </input>
-          {errors.id && 
-            <p className="error_form">
-            {errors.id}
-            </p>}
        </div>
        <div>
          <label className="nombres" >Nombre:</label>
          <input className="barra"
                 name='name' 
                 value={activityData.name} 
-                onChange={event=>handleChange(event)}
-         >
+                onChange={event=>handleChange(event)}>
          </input>
           {errors.name && 
             <p className="error_form">
@@ -59,8 +53,7 @@ return(
          <input className="barra"
                 name='difficulty' 
                 value={activityData.difficulty} 
-                onChange={event=>handleChange(event)}
-         >
+                onChange={event=>handleChange(event)}>
          </input>
           {errors.difficulty && 
             <p className="error_form">
@@ -72,8 +65,7 @@ return(
          <input className="barra"
                 name='duration' 
                 value={activityData.duration} 
-                onChange={event=>handleChange(event)}
-         >
+                onChange={event=>handleChange(event)}>
          </input>
           {errors.duration && 
             <p className="error_form">
