@@ -33,7 +33,8 @@ return(
         <input className="barra"
                name='id' 
                value={activityData.id}
-               onChange={event=>handleChange(event)}>
+               onChange={event=>handleChange(event)}
+               disabled>
         </input>
        </div>
        <div>

@@ -82,15 +82,16 @@ const Edit = () => {
             {errors.duration}
             </p>}
           <label>Temporada:</label>
-          <input className="input_edit" type="text" name="season" value={activity.season} onChange={handleChange} />
-          {errors.season && 
-           <p style={{ color: 'red'}}>
-            {errors.season}
-           </p>}
+          <select className='selector_edit' name='season' value={activity.season} onChange={handleChange}>
+           <option value='Verano'>Verano</option>
+           <option value='Otoño'>Otoño</option>
+           <option value='Primavera'>Primavera</option>
+           <option value='Invierno'>Invierno</option>
+         </select>
           <button 
           className="boton_modificar" 
           type="submit"
-          disabled={ !activity.difficulty  || !activity.duration || errors.difficulty || errors.duration || errors.season || !activity.season }
+          disabled={ !activity.difficulty  || !activity.duration || errors.difficulty || errors.duration || !activity.season }
           onClick={handleEdit}
           >Modificar</button>
         </div>

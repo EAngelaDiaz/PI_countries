@@ -58,12 +58,23 @@
 .input_edit {
     margin: 1rem 1rem 1rem 1rem;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     border-style: solid;
     border-color: dodgerblue;
     border-radius: 1rem;
     width: 39rem;
     
+}
+
+.selector_edit {
+    width: 39rem;
+    height: 5rem;
+    margin: 1rem 1rem 1rem 1rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3rem;
+    border-style: solid;
+    border-color: dodgerblue;
+    border-radius: 1rem;
 }
 
 .boton_modificar {
