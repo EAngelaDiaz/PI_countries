@@ -1,27 +1,3 @@
-.contenedor_form {
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 4rem;
-    margin-bottom: 1rem;
-    
-}
-
-.boton {
-    margin: 2rem;
-    border-radius: 20%;
-    padding: 2rem;
-    border-radius:2rem;
-    background-color: hsl(0, 0%, 100%);
-    border-style: solid;
-    border-color: #347abd;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: large;
-    color:#081664;
-    cursor: pointer;
-}
-
 .formulario {
     display: inline-block;
     background-color: hwb(209 48% 18%);

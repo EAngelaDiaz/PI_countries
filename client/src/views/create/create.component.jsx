@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { getCountries, postActivity, getActivities } from '../../redux/actions/actions';
 import { Form } from '../../component/form/form.component';
-
+import { Link } from "react-router-dom"
+import './create.style.css'
 
 const Create = () => {
 
@@ -108,6 +109,19 @@ useEffect(() => {
    }, [activityData])
 
 return(
+  <div >
+    <div className="contenedor_form">
+      
+        <Link to='/home'>
+         <button className="boton">Volver</button>
+        </Link>
+      
+    
+        <Link to='/activities'>
+         <button className="boton">Actividades</button>
+        </Link>
+      
+      </div>
 <div>
     <Form
       activityData={activityData}
@@ -119,6 +133,7 @@ return(
       handleSubmit={handleSubmit}
     />
     </div>
+  </div>
   );
 };
 

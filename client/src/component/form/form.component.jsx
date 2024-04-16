@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+
 import React from "react"
 import './form.style.css'
 
@@ -13,19 +13,6 @@ export const Form = ({
   handleSubmit,}) => {
   
 return(
-  <div >
-    <div className="contenedor_form">
-      <div>
-        <Link to='/home'>
-         <button className="boton">Volver</button>
-        </Link>
-      </div>
-      <div>
-        <Link to='/activities'>
-         <button className="boton">Actividades</button>
-        </Link>
-      </div>
-      </div>
     <div className="formulario">
       <form onSubmit={event=>handleSubmit(event)}>
        <div>
@@ -103,5 +90,4 @@ return(
          >CREAR</button>
       </form> 
     </div>
-  </div>
 )}
