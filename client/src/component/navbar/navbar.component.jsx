@@ -38,15 +38,18 @@ function Navbar({handleChange, handleSubmit}) {
 
   function handleOrderAlphabet(event) {
     event.preventDefault();
-    dispatch(orderByAlphabet(event.target.value))
-    setOrder(`Ordenado ${event.target.value}`)
-  }
+      dispatch(orderByAlphabet(event.target.value))
+      setOrder(`Ordenado ${event.target.value}`)
+}
+   
+  
 
-  function handleOrderPopulation(event) {
+ function handleOrderPopulation(event) {
     event.preventDefault();
     dispatch(orderByPopulation(event.target.value))
     setOrder(`Ordenado ${event.target.value}`)
-  }
+  } 
+  
 
   return (
     <div className='search-box'>
@@ -64,9 +67,9 @@ function Navbar({handleChange, handleSubmit}) {
           <option value=''>Ordenar por:</option>
           <option value='ascendente'>Ascendente</option>
           <option value='descendente'>Descendente</option>
-        </select>
-        <select className="selector_filtro" onChange={event => handleOrderPopulation(event)} value={order}>
-        <option value=''>Ordenar por:</option>
+          </select>
+        <select className="selector_filtro" onChange={event => handleOrderPopulation(event)} value={order}>  
+          <option value=''>Ordenar por:</option>
           <option value='menor'>Menor Población</option>
           <option value='mayor'>Mayor Población</option>
         </select>

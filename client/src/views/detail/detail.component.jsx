@@ -25,10 +25,10 @@ const Detail = () => {
 
 
   return (
-    <div>
-     <div>
+    <div >
+     <div className="nav_detail">
       <Link to={'/home'}>
-        <button className='boton'>Volver</button>
+        <button className='boton_detail'>Volver</button>
       </Link>
     </div>
     <div className="principal">

@@ -1,5 +1,5 @@
-import { useState, } from "react";
-import { useDispatch } from 'react-redux';
+import { useState } from "react";
+import { useDispatch} from 'react-redux';
 import { getByName } from "../../redux/actions/actions";
 import './searchBar.style.css'
 
@@ -9,10 +9,10 @@ const SearchBar = (event) => {
    
 
    const handleChange = (event) => {
-      event.preventDefault()
       dispatch(getByName(event.target.value));
       setCountry(event.target.value)
    }
+
 
    function handleSubmit (event) {
       event.preventDefault();

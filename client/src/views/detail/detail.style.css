@@ -1,4 +1,16 @@
-.boton {
+.nav_detail {
+    display: flex;
+    background-color: hwb(221 22% 31% / 0.911);
+    width: 200rem;
+    height: 20rem;
+    top: 0;
+    left: 0;
+    padding: 1rem 2rem;
+    display: block;
+    margin-bottom: 2rem;
+}
+.boton_detail {
+    margin-top: 5rem;
     border-radius: 20%;
     padding: 2rem;
     border-radius: 2rem;
@@ -12,7 +24,7 @@
     cursor: pointer;
 }
 
-.boton:hover {
+.boton_detail:hover {
     background-color:#0b1730;
     transform: scale(1.05);
     color:white;
@@ -95,6 +107,10 @@
 }
 
 @media only screen and (max-width:60rem) {
+
+    .nav_detail {
+        width: 180rem;
+    }
     .principal{
         width: 70rem;
         display: grid;
@@ -112,6 +128,18 @@
         width: 70rem;
         display: grid;
         grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width:50rem) {
+    .nav_detail {
+        width: 140rem;
+    }
+}
+
+@media only screen and (max-width:40rem) {
+    .nav_detail {
+        width: 100rem;
     }
 }
 

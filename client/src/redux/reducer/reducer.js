@@ -48,7 +48,8 @@ const reducer = (state = initialState, { type, payload}) => {
                 ...state,
                 allCountries:payload,
             }      
-        case GET_BY_ID:   
+        case GET_BY_ID: 
+
             return{
                 ...state,
                 country:payload
