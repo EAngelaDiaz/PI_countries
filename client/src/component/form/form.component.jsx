@@ -37,7 +37,7 @@ return(
         >
         </input>
           {errors.id && 
-            <p style={{ color: 'red'}}>
+            <p className="error_form">
             {errors.id}
             </p>}
        </div>
@@ -50,7 +50,7 @@ return(
          >
          </input>
           {errors.name && 
-            <p style={{ color: 'red'}}>
+            <p className="error_form">
             {errors.name}
             </p>}
        </div>
@@ -63,7 +63,7 @@ return(
          >
          </input>
           {errors.difficulty && 
-            <p style={{ color: 'red'}}>
+            <p className="error_form">
             {errors.difficulty}
             </p>}
        </div>
@@ -76,7 +76,7 @@ return(
          >
          </input>
           {errors.duration && 
-            <p style={{ color: 'red', fontSize: '30px'}}>
+            <p className="error_form">
             {errors.duration}
             </p>}
        </div>

@@ -10,7 +10,7 @@ const validation = (activityData) => {
     }
     
     if(activityData.difficulty && !/^[1-5]$/.test(activityData.difficulty)) {
-        errors.difficulty = 'Debe ser un numero entre 1 y 5 inclusive'
+        errors.difficulty = 'Solo valor entre 1 y 5'
     }
     
     if(activityData.duration && !/^([0-9]{1,2}):([0-5][0-9]):([0-5][0-9])$/.test(activityData.duration)) {

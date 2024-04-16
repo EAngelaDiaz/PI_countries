@@ -19,7 +19,7 @@ const Create = () => {
 
   const [activityData, setActivityData] = useState({
     id: '',
-    name:'',
+    name: '',
     difficulty:'',
     duration:'',
     season:'',
@@ -80,7 +80,7 @@ const handleSubmit = (event) => {
 
 
   const nameExists = activityData.name && 
-  activities.some(element =>element.name === activityData.name);
+  activities.some(element =>element.name.toUpperCase() === activityData.name.toUpperCase());
   if (nameExists) {
     alert("El nombre ya existe. Por favor elige otro.");
     return;

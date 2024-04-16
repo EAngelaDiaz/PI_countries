@@ -93,3 +93,8 @@
     display: inline;
     font-size: 3rem;
 }
+
+.error_form {
+    color: #ac2020;
+    font-size: 4rem;
+}
