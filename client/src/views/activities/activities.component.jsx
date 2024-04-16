@@ -24,19 +24,16 @@ function Activities() {
   },[dispatch])
 
   
-
-
-
-  return (
+return (
     <div >
-      <div>
+      <div className='nav_activities'>
         <Link to={'/form'}>
           <button className="boton_volver">Volver</button>
         </Link>
       </div>
       <div className="contenedor">
       
-        {allActivities?.length > 0 ? ( allActivities.map(activity => (
+        {allActivities?.length > 0 ? ( allActivities.sort((a, b) => a.id - b.id).map(activity => (
       
           <div className="actividades" key={activity.id}>
             <button className='boton_eliminar' onClick={()=>handleActivity(activity.id)}>x</button>

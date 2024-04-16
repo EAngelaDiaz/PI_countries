@@ -63,9 +63,11 @@ const Edit = () => {
 
   return (
     <div className="contenedor_edit">
+      <div className="nav_edit">
       <Link to={'/activities'}>
       <button className="boton_volver_act">Volver</button>
       </Link>
+      </div>
       <div className="tarjeta_form">
         <div className="datos_actividad" key={activity.id}>
           <h1 className="nombre_edit">Nombre: {activity.name}</h1>

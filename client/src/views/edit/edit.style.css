@@ -1,3 +1,15 @@
+.nav_edit {
+    display: flex;
+    background-color: hwb(221 22% 31% / 0.911);
+    width: 200rem;
+    height: 20rem;
+    top: 0;
+    left: 0;
+    padding: 1rem 2rem;
+    display: block;
+    margin-bottom: 2rem;
+}
+
 .contenedor_edit {
     display: grid;
     grid-template-columns: 1f;
@@ -8,7 +20,7 @@
 }
 
 .boton_volver_act {
-    margin-top: 11rem;
+    margin-top: 5rem;
     margin-right: 10rem;
     border-radius: 20%;
     padding: 2rem;
@@ -95,4 +107,24 @@
         transform: scale(1.05);
         color:white;
     }  
+
+
+@media only screen and (max-width:60rem) {
+
+    .nav_edit {
+        width: 180rem;
+    }
+}
+
+@media only screen and (max-width:50rem) {
+    .nav_edit {
+        width: 160rem;
+    }
+}
+
+@media only screen and (max-width:40rem) {
+    .nav_edit {
+        width: 120rem;
+    }
+}
 

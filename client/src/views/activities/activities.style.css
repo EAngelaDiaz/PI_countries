@@ -1,3 +1,15 @@
+.nav_activities {
+    display: flex;
+    background-color: hwb(221 22% 31% / 0.911);
+    width: 200rem;
+    height: 20rem;
+    top: 0;
+    left: 0;
+    padding: 1rem 2rem;
+    display: block;
+    margin-bottom: 2rem;
+}
+
 .contenedor{
     padding-top: 5%;
     width: 16rem;
@@ -51,7 +63,7 @@
 }
 
 .boton_volver {
-    margin-top: 3rem;
+    margin-top: 4rem;
     margin-right: 6rem;
     border-radius: 20%;
     padding: 2rem;
@@ -127,21 +139,31 @@
     
 
 @media only screen and (max-width:60rem) {
+
+    .nav_activities {
+        width: 180rem;
+    }
     .contenedor {
         grid-template-columns: 1fr 1fr ;
+    }
+    .mensaje_actividades {
+        margin-left: auto;
+        width: 60rem;
+        }
+}
+
+@media only screen and (max-width:50rem) {
+    .contenedor {
+        grid-template-columns: 1fr ;
+    }
+    .nav_activities {
+        width: 160rem;
     }
 }
 
 @media only screen and (max-width:40rem) {
-    .contenedor {
-        grid-template-columns: 1fr ;
-    }
-}
-
-@media only screen and (max-width:60rem) {
-    .mensaje_actividades {
-    margin-left: auto;
-    width: 60rem;
+    .nav_activities {
+        width: 120rem;
     }
 }
 
