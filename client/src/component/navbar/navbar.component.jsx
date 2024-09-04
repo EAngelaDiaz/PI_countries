@@ -1,5 +1,5 @@
 import React from 'react';
-import './navbar.style.css'
+//import './navbar.style.css'
 import { Link } from 'react-router-dom'
 import {getActivities, filterByContinent, filterByActivity, orderByAlphabet, orderByPopulation } from '../../redux/actions/actions'
 import { useDispatch, useSelector } from 'react-redux';
@@ -52,28 +52,38 @@ function Navbar({handleChange, handleSubmit}) {
   
 
   return (
-    <div className='search-box'>
-       <form className='barra_busqueda' onChange={handleChange}>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <div className="container-fluid">
+       <form className="d-flex ms-auto me-4" onChange={handleChange}>
        <SearchBar onSearch={handleSubmit}/>
        </form>
+       <div className='d-flex'>
        <Link to='/form'>
-        <button className='boton_crear' >Crear actividad</button>
+        <button className="btn btn-outline-primary me-3" >Crear actividad</button>
        </Link>
+       </div>
+       <div className='d-flex'>
        <Link to='/'>
-        <button className='boton_salir' >Salir</button>
+        <button className="btn btn-outline-primary" >Salir</button>
        </Link>
-       <div className='filtros'>
-        <select className="selector_filtro" onChange={event => handleOrderAlphabet(event)} value={order}>
-          <option value=''>Ordenar por:</option>
-          <option value='ascendente'>Ascendente</option>
-          <option value='descendente'>Descendente</option>
+       </div>
+       <div className='row row-cols-2 mt-4 m-2'>
+       <div className="col">
+        <select className="form-select mb-3 w-75 " onChange={event => handleOrderAlphabet(event)} value={order}>
+          <option className="nav-item" value=''>Ordenar por:</option>
+          <option className="nav-item" value='ascendente'>Ascendente</option>
+          <option className="nav-item" value='descendente'>Descendente</option>
           </select>
-        <select className="selector_filtro" onChange={event => handleOrderPopulation(event)} value={order}>  
+          </div>
+          <div className="col">
+        <select className="form-select mb-3 w-75 " onChange={event => handleOrderPopulation(event)} value={order}>  
           <option value=''>Ordenar por:</option>
           <option value='menor'>Menor Población</option>
           <option value='mayor'>Mayor Población</option>
         </select>
-        <select className="selector_filtro" onChange={event => handleFilterContinent(event)} value={selectedContinent}> 
+        </div>
+        <div className='col'>
+        <select className="form-select mb-2 w-75" onChange={event => handleFilterContinent(event)} value={selectedContinent}> 
           <option value=''>Filtrar por continente:</option>
           <option value='Europe'>Europa</option>
           <option value='Africa'>África</option>
@@ -82,13 +92,17 @@ function Navbar({handleChange, handleSubmit}) {
           <option value='Americas'>América</option>
           <option value='Antarctic'>Antártida</option>
         </select>
-        <select className="selector_filtro" onChange={event => handleFilterActivity(event)} value={selectedActivity}>
+        </div>
+        <div className='col'>
+        <select className="form-select mb-2 w-75" onChange={event => handleFilterActivity(event)} value={selectedActivity}>
         <option value=''>Filtrar por actividad:</option>
         {activities.map((activity) =>(
           <option key={activity.id} value={activity.name}>{activity.name}</option>))}
         </select>
        </div>
+       </div>
     </div>
+    </nav>
   )
 }
 

@@ -1,18 +1,11 @@
-html {
-  font-size: 5px;
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
-head {
-  padding: 8rem;
-}
-
-body {
-  
-  background: linear-gradient( #2449ee , black 70% );
-  background-image: url('./utils/imagenes/depositphotos_34608059-stock-photo-flags-keyboard.png');
-  background-position: center center;
-  background-repeat: no-repeat;
-  text-align: center;
-  background-size: cover;
-  background-attachment: fixed;
+.navbar {
+  border: none;
+  width: 100%;
 }

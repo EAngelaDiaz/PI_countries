@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCountries } from '../../redux/actions/actions';
-import './home.style.css';
+//import './home.style.css';
 import Navbar from '../../component/navbar/navbar.component';
 import Cards from '../../component/cards/cards.component';
 import Paginated from '../../component/paginated/paginated.component';

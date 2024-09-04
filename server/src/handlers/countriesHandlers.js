@@ -2,6 +2,7 @@ const {
    getCountriesDB,
    getIdCountry,
    getNameCountry, 
+   postIdCountry,
 } = require('../controllers/countriesControllers');
 
 
@@ -43,9 +44,25 @@ const getNameCountries = async (req, res) => {
   }
 };    
 
+const postCountry = async (req, res) => {
+
+  const { data } = req.body;
+
+   try {
+
+   const pais = await getIdCountries({data})
+
+   return pais
+   
+  } catch (error) {
+
+  }
+}
+
     
 module.exports = { 
   getDataApi,
   getIdCountries,
   getNameCountries,
+  postCountry
 };

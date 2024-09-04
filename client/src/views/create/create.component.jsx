@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { getCountries, postActivity, getActivities } from '../../redux/actions/actions';
 import { Form } from '../../component/form/form.component';
 import { Link } from "react-router-dom"
-import './create.style.css'
+//import './create.style.css'
 
 const Create = () => {
 
@@ -27,8 +27,7 @@ const Create = () => {
     countries: [],
   });
 
-  console.log(activityData);
-
+  
 
   useEffect(() =>{
     dispatch(getCountries())
@@ -70,7 +69,7 @@ useEffect(() => {
 
 const handleSubmit = (event) => {
   event.preventDefault();
-  console.log(activityData);
+  
 
   const nameExists = activityData.name && 
   activities.some(element =>element.name.toUpperCase() === activityData.name.toUpperCase());
@@ -109,21 +108,22 @@ useEffect(() => {
    }, [activityData])
 
 return(
-  <div >
-    <div className="contenedor_form">
+  <div className='home-container'>
+    <div className="d-flex justify-content-center bg-light h-100 w-100 m-0 p-0">
+      
       
         <Link to='/home'>
-         <button className="boton">Volver</button>
+         <button className="btn btn-outline-primary m-4 my-5">Volver</button>
         </Link>
       
     
         <Link to='/activities'>
-         <button className="boton">Actividades</button>
+         <button className="btn btn-outline-primary m-4 my-5">Actividades</button>
         </Link>
-      
-      </div>
-<div>
-    <Form
+        </div>
+    
+<div className='d-flex justify-content-center align-items-center my-5'>
+    <Form 
       activityData={activityData}
       errors={errors}
       countries={countries}

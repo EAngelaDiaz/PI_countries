@@ -12,8 +12,8 @@ function App() {
 
   return (
     
-      <div>
-        <Routes>
+      <div className='container-fluid text-bg-light p-0 m-0 bg-primary-subtle text-primary-emphasis'>
+      <Routes>
         <Route path='/' element={<Landing/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/detail/:id' element={<Detail/>}/>

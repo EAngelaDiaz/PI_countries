@@ -67,10 +67,33 @@ const getNameCountry = async (name) => {
       throw new Error('Error al obtener países por nombre.');
     }
   };
+
+
+   const postIdCountry = async (data) => {
+    
+    try {
+
+      const crear = await Country.create({
+        id, 
+        name, 
+        image, 
+        continent, 
+        capital, 
+        subregion, 
+        area, 
+        population
+      })
+    }
+
+    catch (error) {
+      throw new Error('Error al crear el pais');
+    }
+  }
   
 
 module.exports = { 
   getCountriesDB,
   getIdCountry,
   getNameCountry,
+  postIdCountry
 };

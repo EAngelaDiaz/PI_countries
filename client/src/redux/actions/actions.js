@@ -45,13 +45,12 @@ export const getByIdActivity = (id) => {
     return async (dispatch) => {
         try{ 
             const {data} = await axios.get(endpoint);
-            console.log( 'ESTA ES LA DATA', data);
             return dispatch({
                     type: GET_BY_ID_ACTIVITY,
                      payload: data,
             });
         } catch (error) {
-             console.log(error);
+            throw error;
         }
     };
 };         
@@ -66,7 +65,7 @@ export const getByName = (name) => {
                  payload: data,
             });
          } catch (error){
-            console.log(error)
+            throw error;
          } 
         };
     };
@@ -76,13 +75,12 @@ export const getById = (id) => {
     return async (dispatch) => {
         try{ 
         const {data} = await axios.get(endpoint);
-        console.log(data);
             return dispatch({
                  type: GET_BY_ID,
                  payload: data,
             });
         } catch (error) {
-            console.log(error);
+            throw error;
         }
         };
     }; 
@@ -127,7 +125,7 @@ export const postActivity = (payload) => {
         return data
 
         } catch (error) {
-        console.log(error);
+            throw error;
         }
     }
  }
@@ -138,13 +136,12 @@ export const postActivity = (payload) => {
     return async (dispatch) => {
         try {
         const {data} = await axios.delete(endpoint);
-        console.log(endpoint)
             return dispatch({
                  type: DELETE_ACTIVITY,
                  payload: data,
             });
          } catch (error){
-            console.log(error)
+            throw error;
          } 
         };
         
@@ -152,7 +149,7 @@ export const postActivity = (payload) => {
  
     export const putActivity = (id, newData) => {
         const endpoint = `http://localhost:3001/activities/${id}`;
-        console.log(endpoint)
+        
         return async (dispatch) => {
             try {
             const {data} = await axios.put(endpoint, newData);
@@ -161,7 +158,7 @@ export const postActivity = (payload) => {
                      payload: data,
                 });
              } catch (error){
-                console.log(error)
+                throw error;
              } 
             };
     

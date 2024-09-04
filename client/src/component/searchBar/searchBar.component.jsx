@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useDispatch} from 'react-redux';
 import { getByName } from "../../redux/actions/actions";
-import './searchBar.style.css'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faPlane} from "@fortawesome/free-solid-svg-icons";
+//import './searchBar.style.css'
 
 const SearchBar = (event) => {
    const dispatch = useDispatch();
@@ -11,6 +13,7 @@ const SearchBar = (event) => {
    const handleChange = (event) => {
       dispatch(getByName(event.target.value));
       setCountry(event.target.value)
+      
    }
 
 
@@ -21,9 +24,10 @@ const SearchBar = (event) => {
    }
 
    return (
-      <div className="barra_busqueda">
-        <input  className='busqueda' placeholder="Busqueda..." type="text" onChange={handleChange} value={country} />
-         <button className="boton_busqueda" onClick={handleSubmit}>Limpiar</button>
+      <div className=" container-fluid w-100 d-flex">
+         <FontAwesomeIcon className="m-3" aria-hidden="true" icon={faPlane}/>
+        <input  className="form-control m-1" placeholder="Busqueda..." type="text" onChange={handleChange} value={country} />
+         {/*<button className="btn btn-outline-success custom-btn-padding" onClick={handleSubmit}>Limpiar</button>*/}
       </div>
    );
 }

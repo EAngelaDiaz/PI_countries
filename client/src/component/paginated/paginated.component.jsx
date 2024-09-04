@@ -1,8 +1,9 @@
-import './paginated.style.css'
+//import './paginated.style.css'
 import React from 'react'
 
-export default function Paginated({countriesPage, allCountries, paginado, currentPage, setCurrentPage}) {
- let nPages;
+export default function Paginated({countriesPage, allCountries,  currentPage, setCurrentPage}) {
+ 
+  let nPages;
  
  for ( let i=1; i<=Math.ceil(allCountries/countriesPage); i++) {
   nPages = i
@@ -21,8 +22,24 @@ export default function Paginated({countriesPage, allCountries, paginado, curren
  }
 
  return(
+  <nav aria-label="Page navigation" class="d-flex justify-content-center">
+  <ul className="pagination mt-4">
+    <li className="page-item">
+      <button className="page-link" onClick={prev}>&laquo; Anterior</button>
+    </li>
+    <li className="page-item disabled">
+      <span className="page-link">{currentPage > nPages ? setCurrentPage(1) : currentPage} de {nPages}</span>
+    </li>
+    <li className="page-item">
+      <button className="page-link" onClick={next}>Siguiente &raquo;</button>
+    </li>
+  </ul>
+</nav>
   
-  <div className='pagination' >
+ )
+}
+
+{/*<div className='pagination' >
     <button className='boton_paginacion'>
        <h3 onClick={prev}>&laquo;Anterior</h3>
     </button>
@@ -30,8 +47,5 @@ export default function Paginated({countriesPage, allCountries, paginado, curren
     <button className='boton_paginacion'>
        <h3 onClick={next}>Siguiente&raquo;</h3>
     </button>
-  </div>
- )
-}
-
+  </div>*/}
 
