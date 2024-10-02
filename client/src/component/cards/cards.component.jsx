@@ -1,29 +1,16 @@
 import './cards.style.css';
-import Card from '../card/card.component';
+import CardContainer from '../card/card.component';
+import { Row, Col } from 'react-bootstrap';  // Importa Row y Col de Bootstrap
 
 function Cards({ currentCountries }) {
-  // Define el número de columnas basado en la cantidad de tarjetas
-  let columnClass;
-  if (currentCountries.length === 1) {
-    columnClass = 'row-cols-1';
-  } else if (currentCountries.length === 2) {
-    columnClass = 'row-cols-2';
-  } else if (currentCountries.length === 3) {
-    columnClass = 'row-cols-3';
-  } else if (currentCountries.length === 4) {
-    columnClass = 'row-cols-4';
-  } else {
-    columnClass = 'row-cols-5'; // Para 5 o más tarjetas
-  }
-
   return (
-    <div className={`row ${columnClass} g-3 m-3 p-2`}>
+    <Row className="g-3 m-3 p-2">  {/* Ajusta el espaciado */}
       {currentCountries?.map(country => (
-        <div className='col' key={country.id}>
-          <Card country={country} />
-        </div>
+        <Col xs={12} sm={6} md={4} lg={3} xl={2} key={country.id}>  {/* Ajuste responsivo */}
+          <CardContainer country={country} />
+        </Col>
       ))}
-    </div>
+    </Row>
   );
 }
 

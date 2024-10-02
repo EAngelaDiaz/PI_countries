@@ -19,7 +19,7 @@
     "bootstrap": "^5.3.3",
     "jest": "^29.7.0",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.10.4",
+    "react-bootstrap": "^2.10.5",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.1",

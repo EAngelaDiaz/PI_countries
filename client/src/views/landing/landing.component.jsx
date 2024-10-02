@@ -13,11 +13,12 @@ import imagen7 from "../../utils/imagenes/nieve.jpg"
 import imagen8 from "../../utils/imagenes/sidney.jpg"
 import imagen1 from "../../utils/imagenes/tokio.jpg"
 import imagen9 from "../../utils/imagenes/mont.jpg"
+import Footer from '../../component/footer/footer';
 
 function Landing() {
   return (
-    <div className='container w-75 h-75'>
-    <div className='d-flex justify-content-center align-items-center vh-100'>
+    <div className=''>
+    <div className='container w-75 h-75 d-flex justify-content-center align-items-center vh-100'>
     <div className='row row-cols-3 g-0 p-0'>
        
        <div className='col mt-4'>
@@ -60,6 +61,7 @@ function Landing() {
       </Link>
     </div>
     </div>
+    <Footer></Footer>
     </div>
     
   

@@ -1,5 +1,5 @@
 import React from 'react';
-//import './navbar.style.css'
+import './navbar.style.css'
 import { Link } from 'react-router-dom'
 import {getActivities, filterByContinent, filterByActivity, orderByAlphabet, orderByPopulation } from '../../redux/actions/actions'
 import { useDispatch, useSelector } from 'react-redux';
@@ -52,19 +52,19 @@ function Navbar({handleChange, handleSubmit}) {
   
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-primary bg-opacity-50">
     <div className="container-fluid">
        <form className="d-flex ms-auto me-4" onChange={handleChange}>
        <SearchBar onSearch={handleSubmit}/>
        </form>
        <div className='d-flex'>
        <Link to='/form'>
-        <button className="btn btn-outline-primary me-3" >Crear actividad</button>
+        <button className="btn btn-primary me-3 custom-fs" >Crear actividad</button>
        </Link>
        </div>
        <div className='d-flex'>
        <Link to='/'>
-        <button className="btn btn-outline-primary" >Salir</button>
+        <button className="btn btn-primary custom-fs" >Salir</button>
        </Link>
        </div>
        <div className='row row-cols-2 mt-4 m-2'>

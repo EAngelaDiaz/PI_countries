@@ -6,6 +6,7 @@ import { getCountries } from '../../redux/actions/actions';
 import Navbar from '../../component/navbar/navbar.component';
 import Cards from '../../component/cards/cards.component';
 import Paginated from '../../component/paginated/paginated.component';
+import Footer from '../../component/footer/footer'
 
 function Home() {
 
@@ -30,7 +31,7 @@ function Home() {
 
 
   return (
-      <div className='home-container'>
+      <div>
        <Navbar/>
        <Cards currentCountries={currentCountries}/>
        <Paginated
@@ -40,6 +41,7 @@ function Home() {
        allCountries={allCountries.length}
        paginado={paginado}
        ></Paginated>
+       <Footer></Footer>
       </div>
   )
 }

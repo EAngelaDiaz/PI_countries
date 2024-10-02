@@ -1,5 +1,5 @@
 import React from "react"
-//import './form.style.css'
+import './form.style.css'
 
 
 export const Form = ({
@@ -13,10 +13,10 @@ export const Form = ({
   
 return(
   <div className="d-flex justify-content-center align-items-center h-100">
-  <div className="w-auto">
-    <form onSubmit={event => handleSubmit(event)} className="w-auto border border-primary p-4">
-      <div className="mb-3">
-        <label className="form-label">Numero:</label>
+  <div className="form-container w-100">
+    <form onSubmit={event => handleSubmit(event)} className="border border-primary-subtle border-3 rounded p-4">
+      <div className="mb-2">
+        <label className="form-label mb-0">Numero:</label>
         <input className="form-control border-dark "
                name='id' 
                value={activityData.id}
@@ -24,8 +24,8 @@ return(
                disabled>
         </input>
       </div>
-      <div className="mb-3">
-        <label className="form-label">Nombre:</label>
+      <div className="mb-2">
+        <label className="form-label mb-0">Nombre:</label>
         <input className="form-control border-dark"
                name='name' 
                value={activityData.name} 
@@ -36,8 +36,8 @@ return(
             {errors.name}
           </p>}
       </div>
-      <div className="mb-3">
-        <label className="form-label">Dificultad:</label>
+      <div className="mb-2">
+        <label className="form-label mb-0">Dificultad:</label>
         <input className="form-control border-dark"
                name='difficulty' 
                value={activityData.difficulty} 
@@ -48,8 +48,8 @@ return(
             {errors.difficulty}
           </p>}
       </div>
-      <div className="mb-3">
-        <label className="form-label">Duración:</label>
+      <div className="mb-2">
+        <label className="form-label mb-0">Duración:</label>
         <input className="form-control border-dark"
                name='duration' 
                value={activityData.duration} 
@@ -60,8 +60,8 @@ return(
             {errors.duration}
           </p>}
       </div>
-      <div className="mb-3">
-        <label className="form-label">Temporada:</label>
+      <div className="mb-2">
+        <label className="form-label mb-0">Temporada:</label>
         <select className='form-control border-dark' 
                 name='season' 
                 value={activityData.season} 
@@ -73,8 +73,8 @@ return(
           <option value='Invierno'>Invierno</option>
         </select>
       </div>
-      <div className="mb-3">
-        <label className="form-label">Paises:</label>
+      <div className="mb-2">
+        <label className="form-label mb-0">Paises:</label>
         <select className='form-control border-dark' 
                 name='countries' 
                 value={activityData.countries} 
@@ -90,12 +90,12 @@ return(
         <div className="col-3 mb-3" key={e}>
           <div className="d-flex justify-content-between align-items-center">
           <p className="form-text m-0">{e}</p>
-          <button className="btn btn-primary btn-sm" type="button" onClick={() => handleDelete(e)}>x</button>
+          <button className="btn btn-primary btn-sm custom-fs" type="button" onClick={() => handleDelete(e)}>x</button>
           </div>
         </div>
       ))}
       </div>
-      <button className="btn btn-primary my-5 w-100"
+      <button className="btn btn-primary my-4 w-100"
               type='submit'
               disabled={!activityData.id || !activityData.name || !activityData.difficulty || errors.id || errors.name || errors.difficulty || errors.duration || activityData.season === '' || activityData.countries.length === 0}>
         CREAR

@@ -1,11 +1,21 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+html, body {
   height: 100%;
+  margin: 0;
 }
 
-.navbar {
-  border: none;
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  /* Mínimo alto de la pantalla */
+}
+
+main {
+  flex-grow: 1;  /* Hacer que el contenido principal se expanda según el espacio disponible */
+}
+
+footer {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  text-align: center;
   width: 100%;
 }

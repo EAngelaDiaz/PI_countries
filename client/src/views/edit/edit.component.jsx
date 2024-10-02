@@ -5,7 +5,8 @@ import { getByIdActivity, putActivity } from "../../redux/actions/actions";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import validation from "../../validation/validation";
-//import './edit.style.css'
+import './edit.style.css';
+import Footer from '../../component/footer/footer'
 
 const Edit = () => {
 
@@ -63,14 +64,14 @@ const Edit = () => {
 
   return (
     <div className='container-fluid h-100 p-0'>
-      <div className="d-flex justify-content-center bg-light w-100 m-0 p-0">
+      <div className="d-flex justify-content-center bg-primary bg-opacity-50 w-100 m-0 p-0">
       <Link to={'/activities'}>
-      <button className='btn btn-outline-primary m-4 my-5'>Volver</button>
+      <button className='btn btn-primary m-4 my-5 custom-fs'>Volver</button>
       </Link>
       </div>
       <div className="d-flex justify-content-center align-items-center h-100">
-        <div className="w-auto" key={activity.id}>
-          <form className="w-auto border border-primary p-4">
+        <div className="form-container w-100" key={activity.id}>
+          <form className="border border-primary-subtle border-3 rounded p-4 m-5">
             <div className="mb-3">
           <h1 className="fs-2">Nombre: {activity.name}</h1>
           </div>
@@ -100,7 +101,7 @@ const Edit = () => {
          </select>
          </div>
           <button 
-          className="btn btn-primary my-5 w-100" 
+          className="btn btn-primary my-3 w-100 custom-fs" 
           type="submit"
           disabled={ !activity.difficulty  || !activity.duration || errors.difficulty || errors.duration || !activity.season }
           onClick={handleEdit}
@@ -108,7 +109,9 @@ const Edit = () => {
           </form>
         </div>
       </div>
+      <Footer></Footer>
     </div> 
+  
   );
 };
 

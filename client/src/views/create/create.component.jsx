@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { getCountries, postActivity, getActivities } from '../../redux/actions/actions';
 import { Form } from '../../component/form/form.component';
 import { Link } from "react-router-dom"
+import Footer from '../../component/footer/footer'
 //import './create.style.css'
 
 const Create = () => {
@@ -109,16 +110,16 @@ useEffect(() => {
 
 return(
   <div className='home-container'>
-    <div className="d-flex justify-content-center bg-light h-100 w-100 m-0 p-0">
+    <div className="d-flex justify-content-center h-100 w-100 m-0 p-0 bg-primary bg-opacity-50">
       
       
         <Link to='/home'>
-         <button className="btn btn-outline-primary m-4 my-5">Volver</button>
+         <button className="btn btn-primary m-4 my-5 custom-fs">Volver</button>
         </Link>
       
     
         <Link to='/activities'>
-         <button className="btn btn-outline-primary m-4 my-5">Actividades</button>
+         <button className="btn btn-primary m-4 my-5 custom-fs">Actividades</button>
         </Link>
         </div>
     
@@ -133,6 +134,7 @@ return(
       handleSubmit={handleSubmit}
     />
     </div>
+    <Footer></Footer>
   </div>
   );
 };
